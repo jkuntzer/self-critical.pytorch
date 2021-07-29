@@ -15,7 +15,7 @@ import scipy.misc
 from torchvision import transforms as trn
 preprocess = trn.Compose([
         #trn.ToTensor(),
-        trn.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
+        trn.Normalize(torch.tensor([0.485, 0.456, 0.406]).cuda(), torch.tensor([0.229, 0.224, 0.225]).cuda())
 ])
 
 from ..utils.resnet_utils import myResnet
